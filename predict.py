@@ -10,17 +10,27 @@ from pathlib import Path
 from ultralytics import YOLO
 
 
-def load_taxonomy(path: Path = Path("taxonomy.json")) -> dict[int, int]:
-    """Load category mapping from taxonomy.json.
+# def load_taxonomy(path: Path = Path("taxonomy.json")) -> dict[int, int]:
+# """Load category mapping from taxonomy.json.
 
-    Returns a mapping from COCO-80 class index to hackathon category ID.
-    If taxonomy.json is absent, uses identity mapping.
-    """
+# Returns a mapping from COCO-80 class index to hackathon category ID.
+# If taxonomy.json is absent, uses identity mapping.
+# """
+# if not path.exists():
+#    return {}
+# data = json.loads(path.read_text(encoding="utf-8"))
+# Map from position index to category ID
+# błąd ktory jest w return {i: cat["id"] for i, cat in enumerate(data["categories"])}
+def load_taxonomy(path: Path = Path("taxonomy.json")) -> dict[int, int]:
+    """Load mapping from YOLO class index to hackathon category_id."""
     if not path.exists():
         return {}
+
     data = json.loads(path.read_text(encoding="utf-8"))
-    # Map from position index to category ID
-    return {i: cat["id"] for i, cat in enumerate(data["categories"])}
+
+    cat_ids = sorted(cat["id"] for cat in data["categories"])
+
+    return {idx: cat_id for idx, cat_id in enumerate(cat_ids)}
 
 
 def load_image_id_map(annotations_path: Path) -> dict[str, int]:
@@ -41,8 +51,8 @@ def load_image_id_map(annotations_path: Path) -> dict[str, int]:
 
 def predict_directory(
     input_dir: Path,
-    model_path: str = "yolov8n.pt",
-    confidence: float = 0.25,
+    model_path: str = "weights/best.pt",
+    confidence: float = 0.05,
     taxonomy_path: Path = Path("taxonomy.json"),
     annotations_path: Path = Path("test_images.json"),
 ) -> list[dict]:
@@ -126,8 +136,10 @@ def main() -> None:
         help="Path to YOLO model weights (default: yolov8n.pt pretrained)",
     )
     parser.add_argument(
-        "--confidence", type=float, default=0.25,
-        help="Minimum confidence threshold (default: 0.25)",
+        "--confidence",
+        type=float,
+        default=0.05,
+        help="Minimum confidence threshold (default: 0.05)",
     )
     parser.add_argument(
         "--taxonomy", type=Path, default=Path("taxonomy.json"),
