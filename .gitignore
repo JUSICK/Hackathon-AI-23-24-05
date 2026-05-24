@@ -1,5 +1,4 @@
 data/
 runs/
 .venv/
-*.pt
 __pycache__/

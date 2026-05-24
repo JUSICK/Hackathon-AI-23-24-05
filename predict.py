@@ -135,7 +135,7 @@ def predict_directory(
     confidence: float = 0.05,
     taxonomy_path: Path = Path("taxonomy.json"),
     annotations_path: Path = Path("test_images.json"),
-    data_yaml_path: Path = Path("data/yolo/dataset.yaml"),
+    data_yaml_path: Path = Path("dataset.yaml"),
     image_size: int = 1280,
 ) -> list[dict]:
     """
@@ -272,7 +272,7 @@ def main() -> None:
     parser.add_argument(
         "--confidence",
         type=float,
-        default=0.05,
+        default=0.03,
         help="Minimum confidence threshold",
     )
 
@@ -293,8 +293,8 @@ def main() -> None:
     parser.add_argument(
         "--data-yaml",
         type=Path,
-        default=Path("data.yaml"),
-        help="Path to YOLO data.yaml for class-name mapping",
+        default=Path("dataset.yaml"),
+        help="Path to YOLO dataset.yaml for class-name mapping",
     )
 
     parser.add_argument(
