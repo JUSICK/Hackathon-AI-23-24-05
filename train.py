@@ -4,7 +4,7 @@ if __name__ == "__main__":
     model = YOLO("weights/best(V1.0).pt")
 
     results = model.train(
-        data="data/yolo/dataset.yaml",
+        data="dataset.yaml",
 
         epochs=150,
         patience=25,

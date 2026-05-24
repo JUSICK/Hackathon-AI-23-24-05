@@ -136,7 +136,7 @@ def predict_directory(
     taxonomy_path: Path = Path("taxonomy.json"),
     annotations_path: Path = Path("test_images.json"),
     data_yaml_path: Path = Path("dataset.yaml"),
-    image_size: int = 1280,
+    image_size: int = 1024,
 ) -> list[dict]:
     """
     Run YOLO inference on all images in a directory.
@@ -300,7 +300,7 @@ def main() -> None:
     parser.add_argument(
         "--imgsz",
         type=int,
-        default=1280,
+        default=1024,
         help="YOLO inference image size",
     )
 
