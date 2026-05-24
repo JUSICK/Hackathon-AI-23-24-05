@@ -648,6 +648,8 @@ name = "hackology-team"
 version = "0.1.0"
 source = { editable = "." }
 dependencies = [
+    { name = "numpy" },
+    { name = "opencv-python" },
     { name = "pillow" },
     { name = "pycocotools" },
     { name = "ultralytics" },
@@ -662,6 +664,8 @@ dev = [
 
 [package.metadata]
 requires-dist = [
+    { name = "numpy", specifier = ">=2.4.6" },
+    { name = "opencv-python", specifier = ">=4.13.0.92" },
     { name = "pillow", specifier = ">=10.0" },
     { name = "pycocotools", specifier = ">=2.0.11" },
     { name = "ultralytics", specifier = ">=8.3" },
