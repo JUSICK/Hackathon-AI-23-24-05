@@ -181,5 +181,5 @@ Auto-refresh co 60 sekund. Żeby zobaczyć wynik swoje ostatniego zgłoszenia, p
 5. `predict.py` musi implementować wymagany interfejs CLI
 6. Deadline jest egzekwowany automatycznie — zgłoszenia po terminie będą odrzucone
 
-OUR TEAM: Illia - Roman - Danyil
+## OUR TEAM: Illia - Roman - Danyil
 <img width="1840" height="2453" alt="IMG_20260523_201544" src="https://github.com/user-attachments/assets/be04e330-0a6b-4784-aded-0865742c39a9" />
