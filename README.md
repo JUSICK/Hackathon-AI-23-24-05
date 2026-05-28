@@ -1,6 +1,5 @@
 <img width="640" height="640" alt="photo_2026-05-24_08-12-41" src="https://github.com/user-attachments/assets/811ff80d-9b34-4794-b403-8bf5ba606f6e" />
 
-OUR TEAM: Illia - Roman - Danyil
 
 # Hackology II — Object Detection Challenge
 
@@ -181,3 +180,6 @@ Auto-refresh co 60 sekund. Żeby zobaczyć wynik swoje ostatniego zgłoszenia, p
 4. `uv.lock` musi być w repo
 5. `predict.py` musi implementować wymagany interfejs CLI
 6. Deadline jest egzekwowany automatycznie — zgłoszenia po terminie będą odrzucone
+
+OUR TEAM: Illia - Roman - Danyil
+<img width="1840" height="2453" alt="IMG_20260523_201544" src="https://github.com/user-attachments/assets/be04e330-0a6b-4784-aded-0865742c39a9" />
