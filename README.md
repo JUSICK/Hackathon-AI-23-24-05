@@ -1,3 +1,7 @@
+<img width="640" height="640" alt="photo_2026-05-24_08-12-41" src="https://github.com/user-attachments/assets/811ff80d-9b34-4794-b403-8bf5ba606f6e" />
+
+OUR TEAM: Illia - Roman - Danyil
+
 # Hackology II — Object Detection Challenge
 
 ## Harmonogram
